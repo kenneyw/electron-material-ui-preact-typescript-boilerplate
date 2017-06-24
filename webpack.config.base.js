@@ -34,7 +34,11 @@ module.exports = validate({
   // https://webpack.github.io/docs/configuration.html#resolve
   resolve: {
     extensions: ['', '.js', '.ts', '.tsx', '.json'],
-    packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main']
+    packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main'],
+    alias: {
+        'react': 'preact-compat',
+        'react-dom': 'preact-compat'
+    }
   },
 
   plugins: [],
