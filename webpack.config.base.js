@@ -3,12 +3,11 @@
  */
 
 const path = require('path');
-const validate = require('webpack-validator');
 const {
   dependencies: externals
 } = require('./app/package.json');
 
-module.exports = validate({
+module.exports = {
   module: {
     loaders: [{
       test: /\.tsx?$/,
@@ -17,9 +16,6 @@ module.exports = validate({
     }, {
       test: /\.json$/,
       loader: 'json-loader'
-    }, {
-      test: /\.(scss|sass)$/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader']
     }]
   },
 
@@ -33,15 +29,14 @@ module.exports = validate({
 
   // https://webpack.github.io/docs/configuration.html#resolve
   resolve: {
-    extensions: ['', '.js', '.ts', '.tsx', '.json'],
-    packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main'],
-    alias: {
-        'react': 'preact-compat',
-        'react-dom': 'preact-compat'
-    }
-  },
+    extensions: ['.js', '.ts', '.tsx', '.json'],
+    modules: [
+      path.join(__dirname, 'app'),
+      'node_modules',
+    ]
+},
 
   plugins: [],
 
   externals: Object.keys(externals || {})
-});
+};
