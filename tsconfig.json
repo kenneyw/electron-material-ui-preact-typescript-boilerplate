@@ -27,6 +27,7 @@
     "app/**/*.tsx",
     "test/**/*.ts",
     "test/**/*.tsx",
+    "typings/index.d.ts",
     "node_modules/@types/**/*.d.ts"
   ],
   "exclude": [
