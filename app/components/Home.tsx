@@ -4,7 +4,7 @@ import { RaisedButton } from 'material-ui';
 import IconButton from 'material-ui/IconButton';
 import DeleteIcon from 'material-ui-icons/Delete';
 
-let styles = require('./Home.scss');
+const styles = require('./Home.scss');
 
 export default class Home extends React.Component {
   render() {
@@ -16,7 +16,9 @@ export default class Home extends React.Component {
             <RaisedButton label="Counter"/>
           </Link>
           <Link to="/counter">
-            <IconButton><DeleteIcon/></IconButton>
+            <IconButton>
+              <DeleteIcon/>
+            </IconButton>
           </Link>
         </div>
       </div>
