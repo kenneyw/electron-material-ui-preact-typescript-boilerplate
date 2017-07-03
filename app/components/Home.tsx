@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { RaisedButton } from 'material-ui';
 import IconButton from 'material-ui/IconButton';
-import DeleteIcon from 'material-ui-icons/Delete';
+import Alarm from 'react-material-design-icons/icons/Alarm';
 
 const styles = require('./Home.scss');
 
@@ -17,7 +17,12 @@ export default class Home extends React.Component {
           </Link>
           <Link to="/counter">
             <IconButton>
-              <DeleteIcon/>
+              <Alarm color="red"/>
+            </IconButton>
+          </Link>
+          <Link to="">
+            <IconButton disabled>
+              <Alarm color="blue"/>
             </IconButton>
           </Link>
         </div>
