@@ -5,14 +5,13 @@
     "module": "commonjs",
     "jsx": "react",
     "types": [],
-
+    "allowSyntheticDefaultImports": false,
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
 
@@ -28,6 +27,7 @@
     "app/**/*.tsx",
     "test/**/*.ts",
     "test/**/*.tsx",
+    "typings/index.d.ts",
     "node_modules/@types/**/*.d.ts"
   ],
   "exclude": [

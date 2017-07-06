@@ -9,14 +9,17 @@ const {
 
 module.exports = {
   module: {
-    loaders: [{
-      test: /\.tsx?$/,
-      loaders: ['react-hot-loader/webpack', 'ts-loader'],
-      exclude: /node_modules/
-    }, {
-      test: /\.json$/,
-      loader: 'json-loader'
-    }]
+    loaders: [
+      {
+        test: /\.tsx?$/,
+        loaders: ['react-hot-loader/webpack', 'ts-loader'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
+    ]
   },
 
   output: {
@@ -33,8 +36,13 @@ module.exports = {
     modules: [
       path.join(__dirname, 'app'),
       'node_modules',
-    ]
-  },
+    ],
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat',
+      'preact-compat': 'preact-compat/dist/preact-compat'
+    }
+},
 
   plugins: [],
 
