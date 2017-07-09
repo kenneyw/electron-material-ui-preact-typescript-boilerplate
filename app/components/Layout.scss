@@ -9,6 +9,7 @@
     border: 1px solid #999;
 
     .handle {
+      cursor: move;
       background: #ddd;
       border: 1px solid #999;
       border-radius: 3px;
@@ -17,18 +18,5 @@
       padding: 3px 5px;
       text-align: center;
     }
-  }
-
-  .react-draggable, .cursor {
-    cursor: move;
-  }
-  .no-cursor {
-    cursor: auto;
-  }
-  .cursor-y {
-    cursor: ns-resize;
-  }
-  .cursor-x {
-    cursor: ew-resize;
   }
 }

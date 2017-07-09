@@ -42,7 +42,7 @@ export class Layout extends React.Component<IProps> {
           onStop={this.handleStop}
           >
           <div>
-            <div className={`handle ${styles.handle}`}>Drag from here</div>
+            <div className={`handle cursor ${styles.handle}`}>Drag from here</div>
             <div>This readme is really dragging on...</div>
           </div>
         </Draggable>
