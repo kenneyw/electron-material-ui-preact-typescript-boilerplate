@@ -12,6 +12,9 @@ export default class Home extends React.Component {
       <div>
         <div className={styles.container} data-tid="container">
           <h2>Home</h2>
+          <Link to="/layout">
+            <RaisedButton label="Layout"/>
+          </Link>
           <Link to="/counter">
             <RaisedButton label="Counter"/>
           </Link>
