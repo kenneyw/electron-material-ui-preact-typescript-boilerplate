@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-const Draggable: any = require('react-draggable');
+import Rnd from 'react-rnd';
 
 const styles = require('./Layout.scss');
 
@@ -8,6 +8,20 @@ export interface IProps extends RouteComponentProps<any> {
   move(): void,
   position: { x: number, y: number },
 }
+
+const Box = () => (
+  <div className={styles.box}>
+    <p>Hello</p>
+  </div>
+);
+
+type DraggableData = {
+  node: HTMLElement,
+  x: number,
+  y: number,
+  deltaX: number, deltaY: number,
+  lastX: number, lastY: number
+};
 
 export class Layout extends React.Component<IProps> {
 
@@ -31,21 +45,38 @@ export class Layout extends React.Component<IProps> {
     this.setState({ position: { x: 0, y: 0 } });
   };
 
+  handleResizeStop = (e: MouseEvent, dir: String, refToElement: HTMLElement, delta: Number) => {
+    console.log('handleResizeStop');
+    console.log('e: ', e);
+    console.log('dir: ', dir);
+    console.log('refToElement: ', refToElement);
+    console.log('delta: ', delta);
+  };
+
+  handleDragStop = (e: MouseEvent, data: DraggableData) => {
+    console.log('handleDragStop');
+    console.log('e: ', e);
+    console.log('data: ', data);
+  };
+
   render() {
     return (
       <div className={styles.container} data-tid="container">
-        <Draggable
-          axis="both"
+        <Rnd
+          default={{
+            x: 0,
+            y: 0,
+            width: 200,
+            height: 200,
+          }}
+          minWidth={100}
+          minHeight={100}
           bounds="parent"
-          handle=".handle"
-          onStart={this.handleStart}
-          onStop={this.handleStop}
-          >
-          <div>
-            <div className={`handle cursor ${styles.handle}`}>Drag from here</div>
-            <div>This readme is really dragging on...</div>
-          </div>
-        </Draggable>
+          onResizeStop={this.handleResizeStop}
+          onDragStop={this.handleDragStop}
+        >
+          <Box />
+        </Rnd>
       </div>
     );
   }
