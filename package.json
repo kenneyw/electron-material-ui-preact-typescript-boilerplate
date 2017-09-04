@@ -1,8 +1,8 @@
 {
-  "name": "electron-react-typescript-boilerplate",
-  "productName": "ElectronReactTypescript",
+  "name": "conversant-studio-remote-app",
+  "productName": "ConversantStudioRemoteApp",
   "version": "0.10.0",
-  "description": "Electron application boilerplate based on TypeScript, React, React Router, Webpack, React Hot Loader for rapid application development",
+  "description": "Conversant Studio Remote application built using Electron framework with TypeScript, React, React Router, Webpack, React Hot Loader for rapid application development",
   "main": "main.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test node --trace-warnings ./test/runTests.js",
@@ -45,8 +45,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReactTypescript",
-    "appId": "io.github.irath96.ElectronReactTypescript",
+    "productName": "ConversantStudioRemoteApp",
+    "appId": "io.github.kenneyw.ConversantStudioRemoteApp",
     "dmg": {
       "contents": [
         {
@@ -89,7 +89,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/irath96/electron-react-typescript-boilerplate.git"
+    "url": "git+https://github.com/kenneyw/conversant-studio-remote-app.git"
   },
   "author": {
     "name": "Alexander Rath",
@@ -98,7 +98,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/irath96/electron-react-typescript-boilerplate/issues"
+    "url": "https://github.com/kenneyw/conversant-studio-remote-app/issues"
   },
   "keywords": [
     "electron",
@@ -109,7 +109,7 @@
     "webpack",
     "react-hot"
   ],
-  "homepage": "https://github.com/irath96/electron-react-typescript-boilerplate#readme",
+  "homepage": "https://github.com/kenneyw/conversant-studio-remote-app#readme",
   "devDependencies": {
     "@types/enzyme": "^2.5.39",
     "@types/history": "^4.5.2",
@@ -172,8 +172,10 @@
     "preact-compat": "^3.16.0",
     "preact-mdl": "^2.2.1",
     "preact-portal": "^1.1.2",
+    "react-background-image-loader": "0.0.5",
     "react-material-design-icons": "^0.10.0",
     "react-redux": "^5.0.1",
+    "react-rnd": "^5.0.9",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
