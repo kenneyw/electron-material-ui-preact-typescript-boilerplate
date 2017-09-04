@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import Rnd from 'react-rnd';
+import { Link } from 'react-router-dom';
 
 const styles = require('./Layout.scss');
 
@@ -61,22 +62,29 @@ export class Layout extends React.Component<IProps> {
 
   render() {
     return (
-      <div className={styles.container} data-tid="container">
-        <Rnd
-          default={{
-            x: 0,
-            y: 0,
-            width: 200,
-            height: 200,
-          }}
-          minWidth={100}
-          minHeight={100}
-          bounds="parent"
-          onResizeStop={this.handleResizeStop}
-          onDragStop={this.handleDragStop}
-        >
-          <Box />
-        </Rnd>
+      <div>
+        <div className={styles.backButton} data-tid="backButton">
+          <Link to="/">
+            <i className="fa fa-arrow-left fa-3x" />
+          </Link>
+        </div>
+        <div className={styles.container} data-tid="container">
+          <Rnd
+            default={{
+              x: 0,
+              y: 0,
+              width: 200,
+              height: 200,
+            }}
+            minWidth={100}
+            minHeight={100}
+            bounds="parent"
+            onResizeStop={this.handleResizeStop}
+            onDragStop={this.handleDragStop}
+          >
+            <Box />
+          </Rnd>
+        </div>
       </div>
     );
   }
